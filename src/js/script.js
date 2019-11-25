@@ -158,7 +158,7 @@
       
       /* read all data from the form (using utils.serializeFormToObject) and save it to const formData */
       const formData = utils.serializeFormToObject(thisProduct.form);
-      console.log('formData', formData);
+      //console.log('formData', formData);
       
       /* set variable price to equal thisProduct.data.price */
       let price = thisProduct.data.price;
@@ -169,14 +169,14 @@
 
         /* save the element in thisProduct.data.params with key paramId as const param */
         const param = thisProduct.data.params [paramId]; /*tablica czy obiekt?*/
-        console.log('param: ', param);
+        //console.log('param: ', param);
       
         /* START LOOP: for each optionId in param.options */
         for (let optionId in param.options){ /*param.options vs params.option?*/
 
           /* save the element in param.options with key optionId as const option */
           const option = param.options [optionId]; 
-         // console.log('option: ', option);
+          // console.log('option: ', option);
           
           /* START IF: if option is selected and option is not default */
           const optionSelected = formData.hasOwnProperty(paramId) && formData[paramId].indexOf(optionId) > -1; 
@@ -186,6 +186,7 @@
           
             /* add price of option to variable price */
             let priceAdd = price += option.price;
+        
             //console.log('priceAdd: ', priceAdd);
           
             /* END IF: if option is selected and option is not default */
@@ -225,7 +226,10 @@
         }
       /* END LOOP: for each paramId in thisProduct.data.params */ 
       } 
-          
+       
+      /*multiply price by amount*/
+      price *= thisProduct.amountWidget.value;
+
       /* set the contents of thisProduct.priceElem to be the value of variable price */
       thisProduct.priceElem.innerHTML = price;
     }
@@ -234,20 +238,75 @@
       const thisProduct = this;
 
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+      
+      thisProduct.amountWidgetElem.addEventListener('updated', function(event){
+        thisProduct.processOrder();
+      });
     }
   }
 
   class AmountWidget {
     constructor(element){
       const thisWidget = this;
-
+      thisWidget.getElements(element);
+      thisWidget.value = settings.amountWidget.defaultValue;
+      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.initActions();
       console.log('AmountWidget: ', thisWidget);
       console.log('constructor arguments: ', element);
-
-      
     }
-  }
+
+    getElements(element){
+      const thisWidget = this;
+    
+      thisWidget.element = element;
+      thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
+      thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
+      thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
+    }
+
+    setValue(value){
+      const thisWidget = this;
   
+      const newValue = parseInt(value);
+  
+      /*TODO: Add validation*/
+      if (newValue !== thisWidget.Value && newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax){
+        thisWidget.value = newValue;
+        thisWidget.announce();
+      }
+      
+      thisWidget.input.value = thisWidget.value;
+    }
+
+    initActions(){
+      const thisWidget = this;
+
+      thisWidget.input.addEventListener('change', function(){
+        thisWidget.setValue(thisWidget.input.value);
+      });
+
+      thisWidget.linkDecrease.addEventListener('click', function(){
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value - 1);
+        
+      });
+
+      thisWidget.linkIncrease.addEventListener('click', function(){
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value + 1);
+      });
+    }
+
+    announce(){
+      const thisWidget = this;
+
+      const event = new Event ('updated');
+      thisWidget.element.dispatchEvent(event);
+    }
+ 
+  }
+
   const app = {
     initMenu: function(){
       const thisApp = this;
