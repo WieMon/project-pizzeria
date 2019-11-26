@@ -186,16 +186,15 @@
           
             /* add price of option to variable price */
             let priceAdd = price += option.price;
+            console.log('priceAdd: ', priceAdd);
         
-            //console.log('priceAdd: ', priceAdd);
-          
             /* END IF: if option is selected and option is not default */
             /* START ELSE IF: if option is not selected and option is default */
           } else if (!optionSelected && option.default){ 
 
             /* deduct price of option from price */
             let priceDeduct = price -= option.price; 
-            //console.log('priceDeduct: ', priceDeduct);
+            console.log('priceDeduct: ', priceDeduct);
             
           /* END ELSE IF: if option is not selected and option is default */  
           } 
@@ -241,6 +240,7 @@
       
       thisProduct.amountWidgetElem.addEventListener('updated', function(event){
         thisProduct.processOrder();
+        console.log('event: ', event);
       });
     }
   }
