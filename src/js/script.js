@@ -113,8 +113,8 @@
         thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
    
         /* find all active products */
-        const activeProducts = thisProduct.element.querySelectorAll(classNames.menuProduct.wrapperActive);
-        //console.log('activeProducts: ', activeProducts);
+        const activeProducts = document.querySelectorAll(select.all.menuProductsActive);
+        console.log('activeProducts: ', activeProducts);
 
         /* START LOOP: for each active product */
         for (let activeProduct of activeProducts){
