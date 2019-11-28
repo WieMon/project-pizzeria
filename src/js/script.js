@@ -196,14 +196,14 @@
       for (let paramId in thisProduct.data.params){
 
         /* save the element in thisProduct.data.params with key paramId as const param */
-        const param = thisProduct.data.params [paramId]; /*tablica czy obiekt?*/
+        const param = thisProduct.data.params[paramId]; /*tablica czy obiekt?*/
         //console.log('param: ', param);
       
         /* START LOOP: for each optionId in param.options */
         for (let optionId in param.options){ /*param.options vs params.option?*/
 
           /* save the element in param.options with key optionId as const option */
-          const option = param.options [optionId]; 
+          const option = param.options[optionId]; 
           // console.log('option: ', option);
           
           /* START IF: if option is selected and option is not default */
@@ -268,7 +268,7 @@
       
       thisProduct.amountWidgetElem.addEventListener('updated', function(event){
         thisProduct.processOrder();
-        //console.log('event: ', event);
+        console.log('event: ', event);
       });
     }
   }
@@ -342,7 +342,7 @@
       thisCart.products = [];
       thisCart.getElement(element);
       thisCart.initActions(element);
-      console.log('new Cart', thisCart)
+      console.log('new Cart', thisCart);
     }
 
     getElement(element){
@@ -353,11 +353,11 @@
       console.log('cart_summary: ', thisCart.dom.toggleTrigger);
     }
 
-    initActions(element){
+    initActions(){
       const thisCart = this;
       thisCart.dom.toggleTrigger.addEventListener('click', function(){
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
-      })
+      });
     }
     
   }
