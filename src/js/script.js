@@ -73,11 +73,15 @@
       defaultValue: 1,
       defaultMin: 1,
       defaultMax: 9,
-    }
+    },
+    cart: {
+      defaultDeliveryFee: 20,
+    },
   };
 
   const templates = {
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
+    cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
   };
 
   class Product{
@@ -288,8 +292,8 @@
 
     addToCart(){
       const thisProduct = this;
-      //thisProduct.data.name = thisProduct.name;
-      //thisProduct.amountWidget.value = thisProduct.amount;
+      thisProduct.name = thisProduct.data.name;
+      thisProduct.amount = thisProduct.amountWidget.value;
       app.cart.add(thisProduct);
     }
   }
@@ -371,7 +375,9 @@
       thisCart.dom = {};
       thisCart.dom.wrapper = element;
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
-      console.log('cart_summary: ', thisCart.dom.toggleTrigger);
+      thisCart.dom.productList = document.querySelector(select.containerOf.cart);
+      //thisCart.dom.productList = document.querySelector(select.cart.productList);
+      console.log('productList: ', thisCart.dom.productList);
     }
 
     initActions(){
@@ -382,8 +388,15 @@
     }
 
     add(menuProduct){
-      //const thisCart = this;
+      const thisCart = this;
       console.log('adding product', menuProduct);
+
+      //generate HTML
+      const generatedHTML = templates.cartProduct(menuProduct);
+      //create DOM elements
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+      //add DOM elements to cart
+      thisCart.dom.productList.appendChild(generatedDOM);
     }
     
   }
