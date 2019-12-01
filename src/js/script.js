@@ -371,13 +371,14 @@
       console.log('new Cart', thisCart);
     }
 
+    
     getElements(element){
       const thisCart = this;
       thisCart.dom = {};
       thisCart.dom.wrapper = element;
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
       thisCart.dom.productList = document.querySelector(select.containerOf.cart);
-      //thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
+      //thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList); 
       console.log('productList: ', thisCart.dom.productList);
     }
 
@@ -385,8 +386,9 @@
       const thisCart = this;
       thisCart.dom.toggleTrigger.addEventListener('click', function(){
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
-      })
+      });
     }
+    
 
     add(menuProduct){
       const thisCart = this;
@@ -404,7 +406,7 @@
     
   }
 
-  class CartProduct{
+  /*class CartProduct{ 
     constructor(menuProduct, element){
       const thisCartProduct = this;
 
@@ -414,14 +416,17 @@
       thisCartProduct.priceSingle = menuProduct.priceSingle;
       thisCartProduct.amount = menuProduct.amount;
       thisCartProduct.params = JSON.parse(JSON.stringify(menuProduct.params));
+
       thisCartProduct.getElements(element);
       console.log('new CartProduct', thisCartProduct);
+      console.log('productData', menuProduct);
     }
 
     getElements(element){
       const thisCartProduct = this;
 
       thisCartProduct.dom = {};
+      
       thisCartProduct.dom.wrapper = element;
       thisCartProduct.dom.amountWidget = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
       thisCartProduct.dom.price = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
@@ -429,7 +434,7 @@
       thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.remove);
     }
 
-  }
+  }*/
 
   const app = {
     initMenu: function(){
@@ -463,6 +468,7 @@
       thisApp.initData();
       thisApp.initMenu();
       thisApp.initCart();
+     
     },
   };
 
