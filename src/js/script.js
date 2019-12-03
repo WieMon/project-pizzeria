@@ -95,8 +95,6 @@
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
-      
-
       //console.log('new Product: ', thisProduct);
     }
 
@@ -158,7 +156,7 @@
             /* remove class active for the active product */
             activeProduct.classList.remove('active');
 
-          /* END: if the active product isn't the element of thisProduct */
+            /* END: if the active product isn't the element of thisProduct */
           }
         /* END LOOP: for each active product */
         }
@@ -178,13 +176,13 @@
         input.addEventListener('change', function(){
           thisProduct.processOrder();
         });
-
-        thisProduct.cartButton.addEventListener('click', function(event){
-          event.preventDefault();
-          thisProduct.processOrder();
-          thisProduct.addToCart();
-        });
       }
+
+      thisProduct.cartButton.addEventListener('click', function(event){
+        event.preventDefault();
+        thisProduct.processOrder();
+        thisProduct.addToCart();
+      });
     }
 
     processOrder(){
@@ -223,7 +221,6 @@
             /* add price of option to variable price */
             price += option.price;
             
-        
             /* END IF: if option is selected and option is not default */
             /* START ELSE IF: if option is not selected and option is default */
           } else if (!optionSelected && option.default){ 
@@ -231,8 +228,7 @@
             /* deduct price of option from price */
             price -= option.price; 
             
-            
-          /* END ELSE IF: if option is not selected and option is default */  
+            /* END ELSE IF: if option is not selected and option is default */  
           } 
 
           /*set a variable image to equal image elements*/
@@ -287,7 +283,7 @@
       
       thisProduct.amountWidgetElem.addEventListener('updated', function(event){
         thisProduct.processOrder();
-        //console.log('event: ', event);
+        console.log('event: ', event);
       });
     }
 
@@ -387,9 +383,9 @@
 
       thisCart.renderTotalsKeys = ['totalNumber', 'totalPrice', 'subtotalPrice', 'deliveryFee']; /*NEW*/
 
-        for(let key of thisCart.renderTotalsKeys){
-          thisCart.dom[key] = thisCart.dom.wrapper.querySelectorAll(select.cart[key]);
-        }
+      for(let key of thisCart.renderTotalsKeys){
+        thisCart.dom[key] = thisCart.dom.wrapper.querySelectorAll(select.cart[key]);
+      }
     }
 
     initActions(){
@@ -478,8 +474,8 @@
       thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidget);
       
       thisCartProduct.dom.amountWidget.addEventListener('updated', function(event){
-        /*thisCartProduct.processOrder();
-        console.log('event: ', event);*/
+        /*thisCartProduct.processOrder();*/
+        console.log('event: ', event);
         thisCartProduct.amount = thisCartProduct.amountWidget.value;
         thisCartProduct.price = thisCartProduct.priceSingle * thisCartProduct.amount;
         thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
@@ -508,7 +504,6 @@
       thisCartProduct.dom.remove.addEventListener('click', function(event){
         event.preventDefault();
         thisCartProduct.remove();
-        
       });
     }
 
