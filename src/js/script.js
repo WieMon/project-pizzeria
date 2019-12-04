@@ -570,7 +570,7 @@
         price: thisCartProduct.price, 
         priceSingle: thisCartProduct.priceSingle, 
         params: thisCartProduct.params, 
-      }
+      };
     }
 
   }
