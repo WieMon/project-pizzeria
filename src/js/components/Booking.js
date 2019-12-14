@@ -130,6 +130,8 @@ class Booking{
 
     thisBooking.date = thisBooking.datePicker.value;
     thisBooking.hour = utils.hourToNumber(thisBooking.hourPicker.value);
+    console.log('thisBooking.date', thisBooking.date);
+    console.log('thisBooking.hour', thisBooking.hour);
 
     let allAvailable = false;
 
@@ -140,7 +142,7 @@ class Booking{
     ){
       allAvailable = true;
     }
-
+    console.log('thisBooking.dom.tables', thisBooking.dom.tables);
     for(let table of thisBooking.dom.tables){
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);
       if(!isNaN(tableId)){
@@ -150,7 +152,7 @@ class Booking{
       if(
         !allAvailable
         &&
-        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId) > -1
+        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ){
         table.classList.add(classNames.booking.tableBooked);
       } else {
@@ -171,7 +173,7 @@ class Booking{
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
     thisBooking.dom.datePicker = thisBooking.dom.wrapper.querySelector(select.widgets.datePicker.wrapper);
     thisBooking.dom.hourPicker = thisBooking.dom.wrapper.querySelector(select.widgets.hourPicker.wrapper);
-    thisBooking.dom.tables = thisBooking.dom.wrapper.querySelector(select.booking.tables);
+    thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
   }
 
   initWidgets(){
