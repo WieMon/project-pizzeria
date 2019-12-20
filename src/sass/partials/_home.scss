@@ -14,7 +14,7 @@ $color-two: #fff;
 $color-three: #bbb;
 $color-four: #222f3e;
 
-/*Global*/
+/*General*/
 .home-wrapper {
   margin: 42px auto;
   padding: 72px 48px;
@@ -23,30 +23,63 @@ $color-four: #222f3e;
   border-radius: 4px;
 }
 
-.intro, .opening, .services, .portfolio, .page-footer {
-  margin: 0;
-  padding: 0;
+.row-no-margin {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .row-inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 36px;
+  padding-top: 0px;
 }
 
-.inner {
-  padding: 3px 6px;
+.no-padding-left {
+  padding-left: 0;
+  padding-right: 3px;
 }
 
-h1 {
-  color: $color-two;
+.no-padding-right {
+  padding-left: 3px;
+  padding-right: 0;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /*Intro*/
+.intro {
+  padding-top: 0;
+}
+
+.intro-text {
+  h1 {
+    color: $color-two;
+    font-size: 24px;
+  }
+}
+
+.opening-text {
+  h1 {
+    color: $color-two;
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+}
+
+.opening-text {
+  p {
+    color: $color-two;
+    font-size: 16px;
+    margin-top: 0;
+  }
+}
 
 .intro-img {
-  height: 100px;
+  height: 120px;
   width: 100%;
   position: relative;
 }
@@ -55,7 +88,7 @@ h1 {
   img {
     width: 100%;
     height: 100%;
-    border-radius: 2%;
+    border-radius: 2.5%;
     object-fit: cover;
   }
 }
@@ -63,28 +96,38 @@ h1 {
 .intro-text {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 41%;
+  transform: translate(-28%, -50%);
 }
 
-/*Opening*/
-
 .opening-info {
+  height: 120px;
+  border-radius: 2.5%;
+  margin-top: 7px;
   background-color: $color-one;
-  text-align: center;
+  position: relative;
+}
+
+.opening-text {
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-28%, -50%);
 }
 
 /*Services*/
+.services {
+  padding-top: 100px;
+}
 
 .services-img {
   height: 100%;
-
 }
 
 .services-img {
   img {
-    width: 200px;
-    height: 200px;
+    width: 196px;
+    height: 196px;
     border-radius: 2%;
     object-fit: cover;
   }
@@ -110,6 +153,9 @@ h1 {
   background-color: $color-four;
 }
 /*Portfolio*/
+.portfolio {
+  padding-top: 88px;
+}
 
 .portfolio-img {
   height: 100%;
@@ -117,8 +163,8 @@ h1 {
 
 .portfolio-img {
   img {
-    width: 100%;
-    height: 175px;
+    width: 196px;
+    height: 196px;
     border-radius: 2%;
     object-fit: cover;
   }

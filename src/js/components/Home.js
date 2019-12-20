@@ -1,16 +1,19 @@
+import {templates} from '../settings.js';
+import utils from '../utils.js';
 
 class Home{
-  constructor(){
+  constructor(homeWrapper){
     const thisHome = this;
 
     thisHome.Carousel();
+    thisHome.render(homeWrapper);
   }
 
   Carousel(){
     const thisHome = this;
 
-    console.log(thisHome);
-    document.querySelectorAll();
+    console.log('thisHome: ', thisHome);
+    //document.querySelectorAll();
 
     //click on a dot-link
 
@@ -22,6 +25,18 @@ class Home{
 
     //find element with that href
 
+  }
+
+  render(homeWrapper){
+    const thisHome = this;
+
+    const generatedHTML = templates.home();
+    //console.log('html:', generatedHTML);
+    thisHome.dom = {};
+    thisHome.dom.wrapper = homeWrapper;
+    thisHome.dom.wrapper = utils.createDOMFromHTML(generatedHTML);
+    //console.log('dom: ', thisHome.dom);
+    homeWrapper.appendChild(thisHome.dom.wrapper);
   }
 }
 export default Home;

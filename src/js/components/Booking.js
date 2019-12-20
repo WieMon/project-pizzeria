@@ -226,7 +226,7 @@ class Booking{
 
     const generatedHTML = templates.bookingWidget();
     thisBooking.dom = {};
-    thisBooking.dom.wrapper  = bookingWrapper;
+    thisBooking.dom.wrapper = bookingWrapper;
     thisBooking.dom.wrapper = utils.createDOMFromHTML(generatedHTML);
     bookingWrapper.appendChild(thisBooking.dom.wrapper);
     thisBooking.dom.peopleAmount = thisBooking.dom.wrapper.querySelector(select.booking.peopleAmount);
