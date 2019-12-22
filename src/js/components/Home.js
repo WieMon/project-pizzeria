@@ -13,18 +13,30 @@ class Home{
     const thisHome = this;
 
     console.log('thisHome: ', thisHome);
-    //document.querySelectorAll();
+    let i = 0;
+    const carousel = [];
+    const time = 3000;
 
-    //click on a dot-link
+    carousel[0] = '.carousel-0';
+    carousel[1] = '.carousel-1';
+    carousel[2] = '.carousel-2';
 
-    //remove active from other dots-links
+    console.log('carousel0: ', carousel[0]);
 
-    //add active to the clicked dot-link
+    function changeCarousel() {
+      const car = document.querySelector('.carousel');
+      console.log('carousel: ',car);
+    }
 
-    //from the clicked dot take href
+    if(i < carousel.length - 1){
+      i++;
+    } else {
+      i = 0;
+    }
 
-    //find element with that href
+    changeCarousel();
 
+    setTimeout(changeCarousel(), time);
   }
 
   render(homeWrapper){

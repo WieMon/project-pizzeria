@@ -162,7 +162,11 @@ $color-five: #000;
   padding-top: 0;
 }
 
-.dot {
+/*.carousel {
+  display: none;
+}*/
+
+/*.dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
@@ -171,7 +175,7 @@ $color-five: #000;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
-}
+}*/
 
 .active, .dot:hover {
   background-color: $color-four;
