@@ -10,9 +10,9 @@ const app = {
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
+    thisApp.homeBtn = document.querySelectorAll(select.nav.homeBtn);
 
     const idFromHash = window.location.hash.replace('#/', '');
-
 
     let pageMatchingHash = thisApp.pages[0].id;
 
@@ -40,7 +40,25 @@ const app = {
         window.location.hash = '#/' + id;
       });
     }
+
+    for (let home of thisApp.homeBtn) {
+      home.addEventListener('click', function(event) {
+        const clickedElement = this;
+        event.preventDefault();
+
+        /* get page id from href attribute */
+        const id = clickedElement.getAttribute('href').replace('#', '');
+        /* run thisApp.activatePage with that id */
+        thisApp.activatePage(id);
+
+        /* change URL hash */
+        window.location.hash = '#/' + id;
+      });
+    }
   },
+
+
+
 
   activatePage: function(pageId){
     const thisApp = this;

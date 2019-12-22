@@ -7,7 +7,7 @@
   <title>Pizzeria</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
- 
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" href="vendor/bootstrap-grid.css">
@@ -82,13 +82,15 @@
 
    <div class="home-page">
       <div class="intro">
-        <div class="row row-inner row-no-margin">
+        <div id="home-nav" class="row row-inner row-no-margin">
           <div class="col-md-6 no-padding-left">
             <div class="intro-img">
               <img src="images/home/pizza-1.jpg" alt="pizza1">
             </div>
             <div class="intro-text animated">
-              <h1>ORDER ONLINE</h1>
+              <a href="#order">
+                <h1>ORDER ONLINE</h1>
+              </a>
               <p>Delicious food delivered to your door</p>
             </div>
           </div>
@@ -97,7 +99,9 @@
               <img src="images/home/pizza-2.jpg" alt="pizza2">
             </div>
             <div class="intro-text animated">
-              <h1>BOOK A TABLE</h1>
+              <a href="#booking">
+                <h1>BOOK A TABLE</h1>
+              </a>
               <p>Be our guest</p>
             </div>
           </div>

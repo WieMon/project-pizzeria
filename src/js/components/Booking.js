@@ -221,6 +221,7 @@ class Booking{
       });
   }
 
+  
   render(bookingWrapper){
     const thisBooking = this;
 
