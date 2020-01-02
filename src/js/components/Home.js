@@ -5,38 +5,40 @@ class Home{
   constructor(homeWrapper){
     const thisHome = this;
 
-    thisHome.Carousel();
     thisHome.render(homeWrapper);
+    thisHome.carousel();
   }
 
-  Carousel(){
-    const thisHome = this;
+  carousel(){
+    // const thisHome = this;
 
-    console.log('thisHome: ', thisHome);
-    let i = 0;
-    const carousel = [];
+    const carouselSlides = document.querySelectorAll('.carousel');
+    const numberOfSlides = carouselSlides.length;
+    let activeSlide = 0;
     const time = 3000;
 
-    carousel[0] = '.carousel-0';
-    carousel[1] = '.carousel-1';
-    carousel[2] = '.carousel-2';
+    console.log('carouselSlides: ', carouselSlides);
 
-    console.log('carousel0: ', carousel[0]);
-
-    function changeCarousel() {
-      const car = document.querySelector('.carousel');
-      console.log('carousel: ',car);
+    // wszystkie slajdy domyslnie ukryte
+    for(let slide of carouselSlides){
+      slide.style.display = 'none';
     }
 
-    if(i < carousel.length - 1){
-      i++;
-    } else {
-      i = 0;
-    }
+    setInterval(function(){
 
-    changeCarousel();
+      for(let slide of carouselSlides){
+        slide.style.display = 'none';
+      }
 
-    setTimeout(changeCarousel(), time);
+      carouselSlides[activeSlide].style.display = 'block';
+
+      activeSlide++;
+
+      if(activeSlide >= numberOfSlides) {
+        activeSlide = 0;
+      }
+
+    }, time);
   }
 
   render(homeWrapper){
