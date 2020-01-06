@@ -10,8 +10,9 @@ const app = {
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
+    console.log('navLinks: ', thisApp.navLinks);
     thisApp.homeBtn = document.querySelectorAll(select.nav.homeBtn);
-
+    console.log('homeBtn: ', thisApp.homeBtn);
     const idFromHash = window.location.hash.replace('#/', '');
 
     let pageMatchingHash = thisApp.pages[0].id;
@@ -24,6 +25,8 @@ const app = {
     }
 
     thisApp.activatePage(pageMatchingHash);
+
+
 
     for(let link of thisApp.navLinks){
       link.addEventListener('click', function(event){
@@ -39,6 +42,7 @@ const app = {
         /* change URL hash */
         window.location.hash = '#/' + id;
       });
+      console.log('jestem w petli-navLinks');
     }
 
     for (let home of thisApp.homeBtn) {
@@ -54,9 +58,10 @@ const app = {
         /* change URL hash */
         window.location.hash = '#/' + id;
       });
+      console.log('jestem w petli-homeBtn');
     }
-  },
 
+  },
 
 
 
@@ -80,6 +85,7 @@ const app = {
       );
     }
   },
+
   initMenu: function(){
     const thisApp = this;
     for (let productData in thisApp.data.products){
@@ -106,6 +112,8 @@ const app = {
       });
     console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
+
+
 
   initCart: function(){
     const thisApp = this;
@@ -135,18 +143,13 @@ const app = {
 
   init: function(){
     const thisApp = this;
-    //console.log('*** App starting ***');
-    //console.log('thisApp:', thisApp);
-    //console.log('classNames:', classNames);
-    //console.log('settings:', settings);
-    //console.log('templates:', templates);
 
+    thisApp.initHome();
     thisApp.initPages();
     thisApp.initData();
     //thisApp.initMenu();
     thisApp.initCart();
     thisApp.initBooking();
-    thisApp.initHome();
   },
 };
 
