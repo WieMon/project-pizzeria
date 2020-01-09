@@ -1,0 +1,104 @@
+#pages {
+  > * {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}
+
+/*General*/
+.contact-wrapper {
+  margin: ($base-size * 3.5) auto;
+  padding: 72px 48px;
+  background: $color-light;
+  border-radius: $radius;
+  box-shadow: 1em 1em 1em $color-dark;
+}
+
+.row-inner {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 0;
+}
+
+.row-no-margin {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*Intro*/
+
+.contact-intro {
+  padding: 10px;
+}
+
+.intro-info {
+  padding: 0;
+  color: $color-three;
+  font-size: 16px;
+  text-align: center;
+  background-color: $color-one;
+  box-shadow: 1em 1em 1em $color-light;
+}
+
+
+/*Location*/
+.location {
+  padding: 30px 0 0 0;
+  margin: 40px 0 0 0;
+}
+
+.location-img {
+  width: 100%;
+  height: 80%;
+
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    object-fit: cover;
+  }
+}
+
+.icon-location {
+
+  position: absolute;
+  top: 45px;
+  left: 150px;
+  transform: translate(-50%, -50%);
+}
+
+.fa-thumbtack {
+  color: $color-one;
+  font-size: 30px;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+/*Address*/
+.address {
+  padding: 10px;
+  margin: 0;
+}
+
+.address-text {
+  padding: 5px;
+  color: $color-three;
+  font-size: 18px;
+
+  text-align: center;
+  box-shadow: 0 0 1em $color-dark;
+}

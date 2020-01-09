@@ -1,14 +1,19 @@
 /* Variables */
 
-$color-dark: #333;
-$color-light: #fff;
+$color-light: #33cccc;
+$color-dark: #009999;
 $color-main: #ff6b6b;
 $color-warning: #f6b93b;
 $color-danger: #e55039;
 $color-success: #78e08f;
+$color-one: #ff6b6b;
+$color-two: #fff;
+$color-three: #ffffe6;
+$color-four: #222f3e;
+$color-five: #000;
 
-$font-header: 'Oswald', sans-serif;
-$font-text: 'Lato', sans-serif;
+$font-header: 'Indie Flower', cursive;
+$font-text: 'Open Sans', sans-serif;
 
 $font-light: 300;
 $font-normal: 400;
@@ -16,7 +21,7 @@ $font-semibold: 500;
 $font-bold: 700;
 
 $transition: all .3s;
-$radius: 4px;
+$radius: 20px;
 
 $base-size: 12px;
 
@@ -33,7 +38,7 @@ $base-size: 12px;
   border-style: solid;
   padding: 12px;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-align: center;
 
   &:hover {

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pizzeria</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans:400,700&display=swap&subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -19,20 +19,22 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="logo">
-          <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
-          <h2 class="logo__subtitle">the best homemade Italian food</h2>
+
+          <h1 class="logo__title"><span><i class="fas fa-ice-cream"></i></span><span>Yummy</span> <br>Ice Cream</h1>
+          <h2 class="logo__subtitle">Eat ice cream, be happy!</h2>
         </div>
         <div class="main-nav">
-          <a href="#home">Home</a>
-          <a href="#order">Order</a>
-          <a href="#booking">Booking</a>
+          <a href="#home">About</a>
+          <a href="#order">Choose</a>
+          <a href="#booking">Visit us</a>
+          <a href="#contact">Find us</a>
         </div>
         <div id="cart" class="cart">
           <div class="cart__summary">
             <span class="cart__total-number">0</span>
             <span class="cart__total-price">Total price: $<strong>0</strong></span>
             <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-shopping-cart cart__icon"></i>
+            <i class="fas fa-shopping-bag cart__icon"></i>
           </div>
           <div class="cart__content">
             <form class="cart__order">
@@ -76,99 +78,90 @@
     <section id="booking">
       <div class="booking-wrapper container"></div>
     </section>
+    <section id="contact">
+      <div class="contact-wrapper container">
+      </div>
+    </section>
   </div>
+
 
   <script id="template-home-page" type="text/x-handlebars-template">
 
-   <div class="home-page">
-      <div class="intro">
-        <div class="home-nav row row-inner row-no-margin">
-          <div class="col-md-6 no-padding-left">
-            <div class="intro-img">
-              <img src="images/home/pizza-1.jpg" alt="pizza1">
-            </div>
-            <div class="intro-text animated">
-              <a href="#order">
-                <h1>ORDER ONLINE</h1>
-              </a>
-              <p>Delicious food delivered to your door</p>
-            </div>
-          </div>
-          <div class="col-md-6 no-padding-right">
-            <div class="intro-img">
-              <img src="images/home/pizza-2.jpg" alt="pizza2">
-            </div>
-            <div class="intro-text animated">
-              <a href="#booking">
-                <h1>BOOK A TABLE</h1>
-              </a>
-              <p>Be our guest</p>
-            </div>
-          </div>
-          <div class="col-md-12 no-padding">
-            <div class="opening-info">
-            </div>
-            <div class="intro-text">
-              <h1>OPENING HOURS</h1>
-              <p>TUE - SUN, 12PM - 12AM</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="home-page">
 
       <div class="services">
         <div class="row row-inner row-no-margin">
+
+
+            <div class=" col-md-12 services-text carousel-slide active">
+              <div class="services-img">
+                <img src="https://images.pexels.com/photos/1352251/pexels-photo-1352251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="big ice cream">
+                <h3>The biggest ice cream ever!</h3>
+              </div>
+            </div>
+
+            <div class="col-md-12 services-text carousel-slide">
+              <div class="services-img">
+                <img src="https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="ice cream dessert">
+                <h3>Choose among 30 flavors!</h3>
+              </div>
+            </div>
+
+            <div class="col-md-12 services-text carousel-slide">
+              <div class="services-img">
+                <img src="https://images.pexels.com/photos/2161643/pexels-photo-2161643.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="strawberry dessert">
+                <h3>Homemade!</h3>
+              </div>
+            </div>
+
+
+        </div>
+      </div>
+
+      <div class="intro">
+        <div class="home-nav row row-inner row-no-margin">
           <div class="col-md-4 no-padding-left">
-            <div class="services-img">
-              <img src="images/home/pizza-3.jpg" alt="pizza3">
+            <div class="intro-img">
+              <img src="https://as2.ftcdn.net/jpg/02/10/82/99/500_F_210829986_FgR4J786ikpuukpe3MyQxcsYJfkGnnst.jpg" alt="pink ice cream">
+            </div>
+            <div class="intro-text animated">
+              <a href="#order">
+                <h1>Choose</h1>
+              </a>
             </div>
           </div>
-          <div class="col-md-8 no-padding-right">
-
-          <div class="services-text carousel">
-            <h3>AMAZING SERVICE!</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis varius libero. Morbi sed ante in justo ultricies bibendum. Nunc facilisis pretium nisi fermentum ullamcorper.</p>
-            <p>- Margaret Osborne</p>
-            <i class="fas fa-circl active"></i>
-            <i class="fas fa-circle "></i>
-            <i class="fas fa-circle "></i>
-          </div>
-
-          <div class="services-text carousel">
-            <h3>WONDERFUL!</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis varius libero. Morbi sed ante in justo ultricies bibendum. Nunc facilisis pretium nisi fermentum ullamcorper.</p>
-            <p>- Olga Tokarczuk</p>
-            <i class="fas fa-circle"></i>
-            <i class="fas fa-circle active"></i>
-            <i class="fas fa-circle"></i>
-          </div>
-
-          <div class="services-text carousel">
-            <h3>GREAT!</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis varius libero. Morbi sed ante in justo ultricies bibendum. Nunc facilisis pretium nisi fermentum ullamcorper.</p>
-            <p>- Peter Pan</p>
-            <i class="fas fa-circle"></i>
-            <i class="fas fa-circle"></i>
-            <i class="fas fa-circle active"></i>
-          </div>
-
-            <!--
-            <div style="text-align:center">
-              <i id="1" class="fas fa-circle"></i>
-              <i id="2" class="fas fa-circle"></i>
-              <i id="3" class="fas fa-circle"></i>
+          <div class="col-md-4 no-padding-right">
+            <div class="intro-img">
+              <img src="https://as2.ftcdn.net/jpg/02/10/83/01/500_F_210830139_mhKElby3IaICTyzpCVy2R9w4Du6ZX8D9.jpg" alt="blue ice cream">
             </div>
-          -->
+            <div class="intro-text animated">
+              <a href="#booking">
+                <h1>Visit us</h1>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 no-padding-left">
+            <div class="intro-img">
+              <img src="https://t3.ftcdn.net/jpg/01/43/18/12/240_F_143181297_ktRuuRGcVjQFur9cUoU7QH79sGDNItpt.jpg" alt="colourful ice cream">
+            </div>
+            <div class="intro-text animated">
+              <a href="#order">
+                <h1>Find us</h1>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
+
 
 
       <div class="portfolio">
         <div class="row row-inner row-no-margin">
           <div class="col-md-4 no-padding-left">
             <div class="portfolio-img">
-              <img src="images/home/pizza-4.jpg" alt="Two plates with dishes">
+              <img src="https://images.pexels.com/photos/2819088/pexels-photo-2819088.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Chocolate ice cream">
               <div class="icons heart">
                 <i class="fas fa-heart"></i>
               </div>
@@ -179,7 +172,7 @@
           </div>
           <div class="col-md-4 no-padding">
             <div class="portfolio-img">
-              <img src="images/home/pizza-5.jpg" alt="Vegetable salat">
+              <img src="https://images.pexels.com/photos/3186010/pexels-photo-3186010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Fruit ice cream">
               <div class="icons heart">
                 <i class="fas fa-heart"></i>
               </div>
@@ -190,7 +183,7 @@
           </div>
           <div class="col-md-4 no-padding-right">
             <div class="portfolio-img">
-              <img src="images/home/pizza-6.jpg" alt="Pizza cut in slices">
+              <img src="https://images.pexels.com/photos/3151766/pexels-photo-3151766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Coffe ice cream">
               <div class="icons heart">
                 <i class="fas fa-heart"></i>
               </div>
@@ -199,10 +192,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 no-padding-left padding-top">
+          <div class="col-md-12 no-padding-left padding-top">
             <div class="portfolio-img">
-              <img src="images/home/pizza-7.jpg" alt="Open sign">
-              <div class="icons heart">
+              <img src="https://images.pexels.com/photos/417003/pexels-photo-417003.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Yellow and blue van">
+              <div class="icons heart heart-last">
                 <i class="fas fa-heart"></i>
               </div>
               <div class="icons share">
@@ -210,28 +203,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 no-padding padding-top">
-            <div class="portfolio-img">
-              <img src="images/home/pizza-8.jpg" alt="Hands in flavour above pizza cake">
-              <div class="icons heart">
-                <i class="fas fa-heart"></i>
-              </div>
-              <div class="icons share">
-                <i class="fas fa-share-alt"></i>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 no-padding-right padding-top">
-            <div class="portfolio-img">
-              <img src="images/home/pizza-9.jpg" alt="Open sign hanging on door">
-              <div class="icons heart">
-                <i class="fas fa-heart"></i>
-              </div>
-              <div class="icons share">
-                <i class="fas fa-share-alt"></i>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
 
@@ -239,7 +211,7 @@
         <div class="row row-no-margin">
           <div class="col-md-12 no-padding">
             <ul>
-              <li class="footer-info"><a href='#'>View more on instagram</a></li>
+              <li class="footer-info"><a href='#'>© Copyright 2019 FreebiesXpress.com</a></li>
             </ul>
           </div>
         </div>
@@ -418,7 +390,49 @@
         </article> <!-- .product -->
   </script>
 
+  <script id="template-contact-page" type="text/x-handlebars-template">
 
+    <div class="contact-page">
+
+      <div class="contact-intro">
+        <div class="row row-inner row-no-margin">
+          <div class=" col-md-12 intro-info">
+
+              <h1>OPENING HOURS</h1>
+              <p>Monday - Sunday, 10AM - 10PM</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="location">
+        <div class="row row-inner row-no-margin">
+          <div class=" col-md-12 no-padding">
+            <div class="location-img">
+              <img src="images/map.gif" alt="map of Berlin">
+            </div>
+            <div class="icon-location">
+              <i class="fas fa-thumbtack"></i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="address">
+        <div class="row row-inner row-no-margin">
+          <div class=" col-md-12 no-padding">
+            <div class="address-text">
+
+              <h1>Our address</h1>
+              <p>Kehlhofstrasse 1<br>10115 Berlin</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      </div>
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

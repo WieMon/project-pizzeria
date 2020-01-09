@@ -5,7 +5,7 @@
 }
 
 .btn-secondary {
-  @include btn($color-main, $color-light, $color-main);
+  @include btn($color-main, $color-three, $color-main);
 }
 
 .btn-quantity {
@@ -31,10 +31,10 @@
 /* Form elements */
 
 input, select {
-  border: 1px solid $color-dark;
+  border: 1px solid $color-one;
   border-radius: $radius;
   padding: $base-size;
-
+  background: $color-three;
   // CODE ADDED START
   &.error {
     border-color: $color-main;
