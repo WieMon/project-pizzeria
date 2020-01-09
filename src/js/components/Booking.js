@@ -186,8 +186,8 @@ class Booking{
       hour: thisBooking.hourPicker.value,
       people: thisBooking.peopleAmount.value,
       duration: thisBooking.hoursAmount.value,
-      phone: thisBooking.dom.phone,                    /*dlaczego dom a nie value?*/
-      address: thisBooking.dom.address,
+      phone: thisBooking.dom.phone.value,                    /*dlaczego dom a nie value?*/
+      address: thisBooking.dom.address.value,
       starters: [],
       tables: [],
 
