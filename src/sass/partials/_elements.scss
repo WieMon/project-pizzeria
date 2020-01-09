@@ -49,6 +49,7 @@ input, select {
   margin-bottom: $base-size;
   user-select: none;
 
+
   label {
     cursor: pointer;
   }
@@ -81,6 +82,7 @@ input, select {
       transform: rotate(-45deg);
       top: 4px;
       left: 3px;
+
     }
 
   }

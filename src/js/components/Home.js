@@ -17,7 +17,7 @@ class Home{
     let activeSlide = 0;
     const time = 3000;
 
-    console.log('carouselSlides: ', carouselSlides);
+    //console.log('carouselSlides: ', carouselSlides);
 
 
 
@@ -25,12 +25,12 @@ class Home{
     /*for(let slide of carouselSlides){
       slide.style.display = 'none';
     }*/
-    console.log(carouselSlides);
+    //console.log(carouselSlides);
     setInterval(function(){
       for(let slide of carouselSlides){
         slide.classList.remove('active');
         //slide.style.display = 'none';
-        console.log(slide);
+        //console.log(slide);
       }
 
       //carouselSlides[activeSlide].style.display = 'block';
