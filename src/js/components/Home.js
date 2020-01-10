@@ -17,7 +17,7 @@ class Home{
     let activeSlide = 0;
     const time = 3000;
 
-    console.log('carouselSlides: ', carouselSlides);
+    //console.log('carouselSlides: ', carouselSlides);
 
 
 

@@ -10,9 +10,9 @@ const app = {
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
-    console.log('navLinks: ', thisApp.navLinks);
+    //console.log('navLinks: ', thisApp.navLinks);
     thisApp.homeBtn = document.querySelectorAll(select.nav.homeBtn);
-    console.log('homeBtn: ', thisApp.homeBtn);
+    //console.log('homeBtn: ', thisApp.homeBtn);
     const idFromHash = window.location.hash.replace('#/', '');
 
     let pageMatchingHash = thisApp.pages[0].id;
@@ -42,7 +42,7 @@ const app = {
         /* change URL hash */
         window.location.hash = '#/' + id;
       });
-      console.log('jestem w petli-navLinks');
+      //console.log('jestem w petli-navLinks');
     }
 
     for (let home of thisApp.homeBtn) {
@@ -58,7 +58,7 @@ const app = {
         /* change URL hash */
         window.location.hash = '#/' + id;
       });
-      console.log('jestem w petli-homeBtn');
+      //console.log('jestem w petli-homeBtn');
     }
 
   },
@@ -104,13 +104,13 @@ const app = {
         return rawResponse.json();
       })
       .then(function(parsedResponse){
-        console.log('parsedResponse', parsedResponse);
+        //console.log('parsedResponse', parsedResponse);
         /* save parsedResponse as this App.data.products */
         thisApp.data.products = parsedResponse;
         /* execute initMenu method */
         thisApp.initMenu();
       });
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
+    //console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
 
 

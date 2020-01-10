@@ -202,7 +202,7 @@ class Product{
 
     thisProduct.amountWidgetElem.addEventListener('updated', function(event){
       thisProduct.processOrder();
-      console.log('event: ', event);
+      //console.log('event: ', event);
     });
   }
 
