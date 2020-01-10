@@ -6,6 +6,7 @@ export const select = {
     cartProduct: '#template-cart-product',
     bookingWidget: '#template-booking-widget',
     homePage: '#template-home-page',
+    contactPage: '#template-contact-page',
   },
   containerOf: {
     menu: '#product-list',
@@ -13,6 +14,7 @@ export const select = {
     pages: '#pages',
     booking: '.booking-wrapper',
     home: '.home-wrapper',
+    contact: '.contact-wrapper',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -98,8 +100,8 @@ export const classNames = {
 
 export const settings = {
   hours: {
-    open: 12,
-    close: 24,
+    open: 10,
+    close: 22,
   },
   amountWidget: {
     defaultValue: 1,
@@ -107,7 +109,7 @@ export const settings = {
     defaultMax: 9,
   },
   datePicker: {
-    maxDaysInFuture: 14,
+    maxDaysInFuture: 21,
   },
   cart: {
     defaultDeliveryFee: 20,
@@ -116,7 +118,7 @@ export const settings = {
     tableIdAttribute: 'data-table',
   },
   db: {
-    url: '//localhost:3131',
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
     product: 'product',
     order: 'order',
     booking: 'booking',
@@ -133,4 +135,5 @@ export const templates = {
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
   home: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML),
+  contact: Handlebars.compile(document.querySelector(select.templateOf.contactPage).innerHTML),
 };

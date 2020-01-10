@@ -12,7 +12,7 @@ class Home{
   Carousel(){
     //const thisHome = this;
 
-    const carouselSlides = document.querySelectorAll('.carousel');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
     const numberOfSlides = carouselSlides.length;
     let activeSlide = 0;
     const time = 3000;
@@ -22,22 +22,26 @@ class Home{
 
 
     // wszystkie slajdy domyslnie ukryte
-    for(let slide of carouselSlides){
+    /*for(let slide of carouselSlides){
       slide.style.display = 'none';
-    }
-
+    }*/
+    //console.log(carouselSlides);
     setInterval(function(){
       for(let slide of carouselSlides){
-        slide.style.display = 'none';
+        slide.classList.remove('active');
+        //slide.style.display = 'none';
+        //console.log(slide);
       }
 
-      carouselSlides[activeSlide].style.display = 'block';
+      //carouselSlides[activeSlide].style.display = 'block';
 
       activeSlide++;
 
       if(activeSlide >= numberOfSlides) {
         activeSlide = 0;
       }
+
+      carouselSlides[activeSlide].classList.add('active');
 
     }, time);
   }

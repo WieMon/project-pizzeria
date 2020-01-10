@@ -12,7 +12,7 @@ class DatePicker extends BaseWidget{
     thisWidget.initPlugin();
   }
 
-  initPlugin(){ 
+  initPlugin(){
     const thisWidget = this;
     thisWidget.minDate = new Date(thisWidget.value);
     thisWidget.maxDate = utils.addDays(thisWidget.minDate, settings.datePicker.maxDaysInFuture);
@@ -20,11 +20,11 @@ class DatePicker extends BaseWidget{
       defaultDate: thisWidget.minDate,
       minDate: thisWidget.minDate,
       maxDate: thisWidget.maxDate,
-      disable: [
+      /*disable: [
         function(date) {
           return (date.getDay() === 1);
         }
-      ],
+      ],*/
       locale: {
         'firstDayOfWeek': 1
       },

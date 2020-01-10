@@ -90,7 +90,7 @@ class Booking{
     const maxDate = thisBooking.datePicker.maxDate;
 
     for(let item of eventsRepeat){
-      if(item.repeat == 'daily'){
+      if(item.repeat == 'weekly'){
         for(let loopDate = minDate; loopDate <= maxDate; loopDate = utils.addDays(loopDate, 1)){
           thisBooking.makeBooked(utils.dateToStr(loopDate), item.hour, item.duration, item.table);
         }
@@ -186,8 +186,8 @@ class Booking{
       hour: thisBooking.hourPicker.value,
       people: thisBooking.peopleAmount.value,
       duration: thisBooking.hoursAmount.value,
-      phone: thisBooking.dom.phone,                    /*dlaczego dom a nie value?*/
-      address: thisBooking.dom.address,
+      phone: thisBooking.dom.phone.value,                    /*dlaczego dom a nie value?*/
+      address: thisBooking.dom.address.value,
       starters: [],
       tables: [],
 
@@ -221,7 +221,7 @@ class Booking{
       });
   }
 
-  
+
   render(bookingWrapper){
     const thisBooking = this;
 

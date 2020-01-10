@@ -3,6 +3,7 @@ import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
 import Home from './components/Home.js';
+import Contact from './components/Contact.js';
 
 const app = {
   initPages: function(){
@@ -141,15 +142,24 @@ const app = {
     thisApp.homeWrapper = new Home (homeWrapper);
   },
 
+  initContact: function(){
+    const thisApp = this;
+
+    const contactWrapper = document.querySelector(select.containerOf.contact);
+    thisApp.contactWrapper = new Contact (contactWrapper);
+  },
+
   init: function(){
     const thisApp = this;
 
     thisApp.initHome();
+    thisApp.initContact();
     thisApp.initPages();
     thisApp.initData();
     //thisApp.initMenu();
     thisApp.initCart();
     thisApp.initBooking();
+
   },
 };
 
