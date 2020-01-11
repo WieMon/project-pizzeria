@@ -11,13 +11,13 @@ class Contact {
 
   render(contactWrapper){
     const thisContact = this;
-    console.log(templates);
+    //console.log(templates);
     const generatedHTML = templates.contact();
     thisContact.dom = {};
     thisContact.dom.wrapper = contactWrapper;
     thisContact.dom.wrapper = utils.createDOMFromHTML(generatedHTML);
     contactWrapper.appendChild(thisContact.dom.wrapper);
-    console.log('Contact', thisContact.wrapper);
+    //console.log('Contact', thisContact.wrapper);
   }
 }
 export default Contact;

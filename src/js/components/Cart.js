@@ -75,7 +75,7 @@ class Cart{
       thisCart.totalNumber += product.amount;
     }
     thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
-    console.log('totalNumber, subtotalPrice, thisCart.totalPrice: ', thisCart.totalNumber, thisCart.subtotalPrice, thisCart.totalPrice);
+    //console.log('totalNumber, subtotalPrice, thisCart.totalPrice: ', thisCart.totalNumber, thisCart.subtotalPrice, thisCart.totalPrice);
 
     for(let key of thisCart.renderTotalsKeys){
       for(let elem of thisCart.dom[key]){
@@ -98,16 +98,15 @@ class Cart{
     const url = settings.db.url + '/' + settings.db.order;
 
     const payload = {
-      phone: thisCart.dom.phone,
-      address: thisCart.dom.address,
+      phone: thisCart.dom.phone.value,
+      address: thisCart.dom.address.value,
       totalNumber: thisCart.totalNumber,
       subtotalPrice: thisCart.subtotalPrice,
       deliveryFee: thisCart.deliveryFee,
       products: [],
 
     };
-  
-
+    console.log('payload: ', payload);
     for(let product of thisCart.products){
       payload.products.push(product.getData());
     }
@@ -123,7 +122,7 @@ class Cart{
     fetch(url, options)
       .then(function(response){
         return response.json();
-      }).then(function(parsedResponse){
+      }).then(function(){
         //console.log('parsedResponse', parsedResponse);
       });
   }
